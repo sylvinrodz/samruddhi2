@@ -1,0 +1,27 @@
+<img src="assets/images/mainPage.jpg" alt="mainPage" class="mainPage">
+<img src="assets/images/Logout.png" alt="Logout" class="logout" (click)="logout()" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
+<img src="assets/images/mute.png" alt="mute" class="sound" (click)="stop()" *ngIf="showMute" data-bs-toggle="tooltip" data-bs-placement="right" title="Sound Off">
+<img src="assets/images/unmute.png" alt="unmute" class="sound" (click)="play()" *ngIf="!showMute" data-bs-toggle="tooltip" data-bs-placement="right" title="Sound On">
+<video src="assets/images/main.mp4" class="centerVideo" loop autoplay muted preload="auto"></video>
+<button class="mainEvent" [routerLink]="['/video']"  ></button>
+<img src="assets/images/hotspot.gif" alt="mainEvent" class="mainEventHS"  [routerLink]="['/video']">
+<button class="selfie" (click)="photo()"></button>
+<img src="assets/images/hotspot.gif" alt="selfieHS" class="selfieHS" (click)="photo()">
+<button class="LeaderSpeak" [routerLink]="['/leaderspeak']" ></button>
+<img src="assets/images/hotspot.gif" alt="mainEvent" class="LeaderSpeakHS" [routerLink]="['/leaderspeak']">
+
+  
+  <!-- Modal -->
+ 
+    <div class="modal-dialog modal-dialog-centered" *ngIf="modal">
+      <div class="modal-content">
+    
+        <div class="modal-body">
+          This website wants to play music
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="play()">Play</button>
+          <button type="button" class="btn btn-primary" (click)="stop()">Don't play</button>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: appetite;
+    src: url(assets/fonts/appetite.ttf);
+  }
+*{
+    /* font-family: appetite; */
+}
+.logout{
+  position: absolute;
+  top: 0;
+  left: 1%;
+  transform: translate(-1%,0%);
+  margin-top: 1%;
+  width: 3vw;
+  cursor: pointer;
+  z-index: 20;
+}
+.home{
+  position: absolute;
+  width: 3vw;
+  top: 0%;
+  left: 99%;
+  transform: translate(-99%,-0%);
+  margin-top: 1%;
+  cursor: pointer;
+  z-index: 20;
+}

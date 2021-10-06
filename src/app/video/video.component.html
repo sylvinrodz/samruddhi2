@@ -1,0 +1,79 @@
+
+  <!-- <img src="assets/images/VideoPage.jpg" alt="videoPage" class="videoPage"> -->
+  
+  <span class="msg" *ngIf="showMsg">{{msg}}</span>
+  <emoji-mart [showPreview]="false" [enableSearch]="false" totalFrequentLines="1" *ngIf="showEmojiPicker" (emojiSelect)="addEmoji($event)"></emoji-mart>
+ 
+    <iframe *ngIf="VideoLink" [src]="VideoLink" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0%;left:50%;width:100%;height:100%;margin-left: 0%;transform: translate(-50%,0%);"></iframe>
+
+ 
+    <div class="wrapper" *ngIf="showChat">
+      <div class="chat-box" >
+          <div class="chat-head" (click)="showChat = !showChat">
+              <h2>Chat</h2>
+             <button style="float: right;background-color: transparent;color: white;outline: none;border: none;margin: auto;padding-right: 2%;" >x</button>
+          </div>
+          <div class="chat-body" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+              <div *ngIf="showName">
+                  <br>
+                  <div style="text-align: center;">
+                  
+                      <div class="form-group">
+                        <label for="">Enter Your name</label>  <br>
+                        <input type="text"
+                          class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="name">
+                        
+                      </div>
+                      <br>
+                      <button (click)="nameAdd()" class="m-2" style="border: none;padding: 2%;color: white;background-color: rgb(41, 40, 40);">Submit</button>
+                  </div>
+              </div>
+              
+              <div class="msg-insert" *ngIf="!showName" >
+                  
+                  <div [ngClass]="{'msg-send': name === chat.user.name,'msg-receive': name != chat.user.name}" *ngFor="let chat of chats"> {{chat.msg}} <br>
+                      <small style="color: rgba(255, 255, 255, .6)">{{chat.user.name}}</small>
+                  </div>
+              </div>
+              <div class="footer1 row" *ngIf="!showName">
+                  
+    
+      <div class="col-sm-8">
+          <input class="form-control input" type="text" placeholder="type here.." [(ngModel)]="msg" (keyup.enter)="sendChat()">
+      </div>
+      <div class="col-sm" style="align-items: center;vertical-align: middle; margin: auto;">
+          <button (click) ="toggleEmojiPicker()" class="sIcon"> 😀</button>
+      </div>
+      <div class="col-sm" style="align-items: center;vertical-align: middle; margin: auto;">
+          <i class="fa fa-paper-plane" aria-hidden="true" style="cursor: pointer;color: #541399;"  (click)="sendChat()"></i>
+      </div>
+    
+                  <!-- <input placeholder="type here..." [(ngModel)]="msg" (keyup.enter)="sendChat()">
+                  <button (click) ="toggleEmojiPicker()" style="width: 15%;height: inherit;font-size: 1vw;border: none;outline: none;background-color: white;"> 😀</button>
+                  <button type="button" class="btn btn-dark"
+                      style="border-radius: 0%;height: 100%;width: 20%;font-size: 1vw;outline: none;"  (click)="sendChat()">SEND</button> -->
+              </div>
+          </div>
+      </div>
+    </div>
+ 
+  <img src="assets/images/CHAT.png" class="comment" (click)="showChat = !showChat" data-bs-toggle="tooltip" data-bs-placement="right" title="Chat">
+  <img src="assets/images/Logout.png" class="logout" (click)="logout()" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
+  <!-- <img src="assets/images/photo.png" class="photo" (click)="photo()" data-bs-toggle="tooltip" data-bs-placement="right" title="Photo Booth">
+  <img src="assets/images/clap.png" class="clap" (click)="clap.play()" data-bs-toggle="tooltip" data-bs-placement="right" title="Clap">
+  <img src="assets/images/hoot.png" class="hoot" (click)="hoot.play()" data-bs-toggle="tooltip" data-bs-placement="right" title="Hoot"> -->
+  <div class="modal1" *ngIf="commentModal">
+    <div class="modelHeader">
+      Say something
+      <span style="float: right;font-size: 1vw;cursor: pointer;" (click)="showModal(false)" data-bs-toggle="tooltip" data-bs-placement="right" title="Close">x</span>
+    </div>
+    <div class="body">
+      <span >Say something:</span> 
+      <textarea name="question" [(ngModel)]="question" rows="3" style="width: 100%;resize: none;"></textarea>
+    </div>
+    <div class="modalFooter">
+      <button type="button" class="btn btn-block" (click)="askQuestion(question)" [disabled] = "!question" ><img src="assets/images/submit.png" alt="submit" class="submit" ></button>
+      
+    </div>
+  </div>
+

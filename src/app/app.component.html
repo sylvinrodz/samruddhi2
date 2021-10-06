@@ -1,0 +1,12 @@
+<router-outlet *ngIf="shoePage">
+
+</router-outlet>
+
+<img *ngIf="showMsg" src="assets/images/rotateScreen.jpg" alt="" style="width: 100%;height: auto;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+
+<div *ngIf="fullTable">
+  <!-- <img src="assets/images/Reference.jpg"  style="width: 100%;height: auto;"> -->
+  <img (click)="openFullscreen()" src="assets/images/ef.png"  style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-40%);width: 35vw;cursor: pointer;">
+</div>
+
+  

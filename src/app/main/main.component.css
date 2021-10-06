@@ -1,0 +1,184 @@
+.mainPage{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    max-width: 100vw;
+   background-size: cover;
+   top: 0%;
+   left: 50%;
+   transform: translate(-50%,0%);
+    z-index: -1
+}
+.sound{
+  position: absolute;
+  top: 0;
+  left: 99%;
+  transform: translate(-99%,0%);
+  margin-top: 1%;
+  width: 3vw;
+  cursor: pointer;
+  z-index: 5;
+}
+.selfie{
+    position: absolute;
+    top: 0%;
+    left: 73%;
+    transform: translate(-73%,-0%);
+    -moz-transform:  translate(-73%,-0%);
+    width: 7vw;
+    height: 14vw;
+    margin-top: 33%;
+    background: transparent;
+    cursor: pointer;
+    border: transparent;
+}
+.selfieHS{
+  position: absolute;
+  top: 0%;
+  left: 74%;
+  transform: translate(-74%,-0%);
+  -moz-transform:  translate(-74%,-0%);
+  width: 3vw;
+  height: 3vw;
+  margin-top: 33%;
+  background: transparent;
+  cursor: pointer;
+  border: transparent;
+}
+.mainEvent{
+    position: absolute;
+    top: 0%;
+    left: 50.5%;
+    transform: translate(-50.5%,-0%);
+    -moz-transform:  translate(-50.5%,-0%);
+    width: 20vw;
+    height: 9vw;
+    margin-top: 31%;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+}
+.mainEventHS{
+  position: absolute;
+  top: 0%;
+  left: 50.5%;
+  transform: translate(-50.5%,-0%);
+  -moz-transform:  translate(-50.5%,-0%);
+  width: 3vw;
+  height: 3vw;
+  margin-top: 34%;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
+.LeaderSpeak{
+  position: absolute;
+  top: 0%;
+  left:4.5%;
+  transform: translate(-4.5%,-0%);
+  -moz-transform:  translate(-4.5%,-0%);
+  width: 32vw;
+  height: 26vw;
+  margin-top: 28%;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
+.LeaderSpeakHS{
+  position: absolute;
+  top: 0%;
+  left:31%;
+  transform: translate(-31%,-0%);
+  -moz-transform:  translate(-31%,-0%);
+  width: 3vw;
+  height: 3vw;
+  margin-top: 29%;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
+.Feedback{
+  background-color: #00886A;font-weight: bold;
+  position: absolute;
+  top: 0%;
+  left: 2%;
+  transform: translate(-2%,-0%);
+  -moz-transform:  translate(-2%,-0%);
+  margin-top: 48%;
+ /* color: white;
+ outline: none;
+ border: none; */
+ border: 2px solid black;
+ font-size: 1.5vw;
+}
+
+/* The Modal (background) */
+.modal1 {
+    
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0,0.8); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content1 {
+    margin: auto;
+    display: block;
+    width: 30%;
+    max-width: 700px;
+  }
+  
+ 
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content1{
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  .centerVideo{
+    position: absolute;
+    left: 37.05%;
+    top: 0;
+    /* transform: translate(-50%,0%); */
+    margin-top: 15.1%;
+    width: 27.8vw;
+    height: auto;
+    
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content1 {
+      width: 60%;
+    }
+  }

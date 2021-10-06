@@ -1,0 +1,61 @@
+<div *ngIf="showSignup">
+    <img src="assets/images/signup.jpg" alt="loginPage" class="loginPage" />
+    <span class="msg" *ngIf="Errormsg">{{ ErrorText }}</span>
+
+    <div class="formArea">
+        <form class="form" (ngSubmit)="onSubmit()" #signupForm="ngForm" autocomplete="off">
+            <div style="height: 4.2vw; width: 100%; background: transparent"></div>
+            <div class="row formDiv">
+                <input type="text" class="input" id="name" name="name" [(ngModel)]="model.name" required #name="ngModel"
+                    autocomplete="off" />
+            </div>
+            <div style="height: 3.5vw; width: 100%; background: transparent"></div>
+            <div class="row formDiv">
+                <input type="email" class="input" id="email" name="email" [(ngModel)]="model.email" required
+                    #email="ngModel" autocomplete="off" />
+            </div>
+            <div style="height: 3.5vw; width: 100%; background: transparent"></div>
+            <div class="row formDiv">
+                <input type="number" class="inputphoneNumber" id="phoneNumber" name="phoneNumber"
+                    [(ngModel)]="model.phoneNumber" required #phoneNumber="ngModel" autocomplete="off" />
+            </div>
+            <div style="height: 3.5vw; width: 100%; background: transparent"></div>
+            <div class="row formDiv">
+                <input type="number" class="inputAge" id="age" name="age" [(ngModel)]="model.age" required
+                    #age="ngModel" autocomplete="off" />
+            </div>
+            <div style="height: 3.5vw; width: 100%; background: transparent"></div>
+            <div class="row formDiv">
+                <input type="text" class="inputCollege" id="college" name="college" [(ngModel)]="model.college" required
+                    #college="ngModel" autocomplete="off" />
+            </div>
+            <div style="height: 4.9vw; width: 100%; background: transparent"></div>
+            <div class="row formDiv">
+                <input type="checkbox" class="yesCheckbox" id="yes" name="yes" [(ngModel)]="model.yes" 
+                    #yes="ngModel" autocomplete="off" (change)="chkBox()" />
+                <input type="checkbox" class="noCheckbox" id="no" name="no" [(ngModel)]="model.no" 
+                    #no="ngModel" autocomplete="off" (change)="chkBox1()"/>
+            </div>
+            <div style="height: 4.6vw; width: 100%; background: transparent"></div>
+            <div class="row formDiv">
+                <textarea type="text" class="questionCollege" id="question" name="question" [(ngModel)]="model.question" required
+                    #question="ngModel" autocomplete="off" ></textarea>
+            </div>
+            <div style="height: 4.05vw;width:100%;background:transparent;">
+                </div>
+        <div class="buttonDiv">
+         
+          <div class="formButton" (click)="onSubmit()"></div>
+    
+        </div>
+        <div style="height: 6vw;width:100%;background:transparent;">
+        </div>
+        <div class="buttonDiv">
+         
+            <div class="formButton1" [routerLink]="['/login']" routerLinkActive="router-link-active" ></div>
+      
+          </div>
+        </form>
+    </div>
+</div>
+<img src="assets/images/thankyou.jpg" alt="loginPage" class="loginPage" *ngIf="!showSignup"/>

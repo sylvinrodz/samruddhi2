@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mdrt-f6c3f": {
+      "hosting": {
+        "MDRT-microsite": [
+          "mdrt-f6c3f"
+        ]
+      }
+    }
+  }
+}

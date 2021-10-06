@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENNAMETAL</title>
+    <style>
+          .bgImg{
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    object-fit: cover;
+    width: 100%;
+    max-width: 100vw;
+   background-size: cover;
+   top: 0%;
+   left: 0%;
+   transform: translate(-0%,0%);
+    z-index: -1
+  }
+        .frame{
+           height: 850px;margin-top: 12%;
+        }
+        .homeImg{
+    position: absolute;
+    width: 3vw;
+    top: 0%;
+    left: 2%;
+    transform: translate(-2%,-0%);
+    margin-top: 3%;
+    cursor: pointer;
+    
+	}
+    </style>
+    <script>
+          
+  var user = localStorage.getItem("user");
+  if(!user){
+    alert("you have been sucessfully logged out");
+    GoHome();
+  }
+        function GoHome(){
+  window.open(window.location.origin,"_self");
+}
+    </script>
+</head>
+<body>
+    <img src="photoframe.jpg" class="bgImg">
+    <!-- <img src="../images/home.png" class="homeImg"  onclick="GoHome()"> -->
+    <div id="vb-06rX3QdJ"   class="frame"></div><script src="https://app.virtualbooth.me/embed/06rX3QdJ"></script><script>PhotoBooth.initWidget("vb-06rX3QdJ", "06rX3QdJ");</script>
+    <!-- <div id="vb-xd1mJrdO"  class="frame"></div><script src="https://app.virtualbooth.me/embed/xd1mJrdO"></script><script>PhotoBooth.initWidget("vb-xd1mJrdO", "xd1mJrdO");</script> -->
+</body>
+</html>

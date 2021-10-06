@@ -1,0 +1,38 @@
+<img src="assets/images/LeaderSpeak.jpg" alt="mainPage" class="mainPage">
+<img src="assets/images/Logout.png" alt="Logout" class="logout" (click)="logout()" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
+<img src="assets/images/home.png" alt="home" class="home" (click)="home()" data-bs-toggle="tooltip" data-bs-placement="right" title="Home">
+<!-- Button trigger modal -->
+<button type="button" class="one" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Samik Nath','https://player.vimeo.com/video/588772052?autoplay=1')"></button>
+<button type="button" class="two"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Pallav Agarwal','https://player.vimeo.com/video/588774027?autoplay=1')"></button>
+<button type="button" class="three"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Shubham Tongia','https://player.vimeo.com/video/588774745?autoplay=1')"></button>
+<button type="button" class="four"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Chittaaranjan Nayak','https://player.vimeo.com/video/588772801?autoplay=1')"></button>
+<button type="button" class="five"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Ramith K','https://player.vimeo.com/video/588774404?autoplay=1')"></button>
+<button type="button" class="six"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Srinivas Rallabandi','https://player.vimeo.com/video/588774988?autoplay=1')"></button>
+<button type="button" class="seven"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Vishwanath Tata','https://player.vimeo.com/video/589267778?autoplay=1')"></button>
+<button type="button" class="eight"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Madhur Vijaywargiya','https://player.vimeo.com/video/588773538?autoplay=1')"></button>
+<button type="button" class="nine"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Sureshkumar Nair','https://player.vimeo.com/video/588775269?autoplay=1')"></button>
+<button type="button" class="ten"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Amit Duggal','https://player.vimeo.com/video/588772586?autoplay=1')"></button>
+<button type="button" class="eleven"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Alok Srivastava','https://player.vimeo.com/video/588772402?autoplay=1')"></button>
+<button type="button" class="twelve"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Hemanth Urs','https://player.vimeo.com/video/588773151?autoplay=1')"></button>  
+<button type="button" class="thirteen"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Nissar Iqbal','https://player.vimeo.com/video/588773839?autoplay=1')"></button>
+<button type="button" class="fourteen"  data-bs-toggle="modal" data-bs-target="#exampleModalToggle" (click)="modalOpen('Hardeep Singh Rekhi','https://player.vimeo.com/video/588773001?autoplay=1')"></button>
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header text-center" style="background-color: #891532;color: #ffffff !important;font-weight: bold;">
+          <h5 class="modal-title" id="exampleModalToggleLabel">{{name}}</h5>
+          <button data-bs-dismiss="modal" aria-label="Close" style="background-color: transparent;border: none;color: #fff;" (click)="close()">Close</button>
+        </div>
+        <div class="modal-body">
+          <iframe *ngIf="link" [src]="link" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:98%;height:98%;"></iframe>
+          <!-- <iframe *ngIf="link" [src]="link"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width: 98%;height: 98%;"></iframe> -->
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <!-- <div class="videoModel" *ngIf="showVideoModel">
+    <h5 class="modal-title" id="exampleModalToggleLabel">{{name}}</h5>
+    <button data-bs-dismiss="modal" aria-label="Close" style="background-color: transparent;border: none;color: #891532;float: right;" (click)="showVideoModel = false">X</button>
+    <iframe [src]="link" width="800" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width: 90%;height: 90%;margin-left: 5%;margin-top: 5%;"></iframe>
+  </div> -->
