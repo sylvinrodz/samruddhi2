@@ -36,13 +36,14 @@ export class SignupService {
   );
   }
   addData(data){
-  
-    return this.firestore.collection('users').doc(data['email']).update(data);
+   
+    return this.firestore.collection('users').doc(data['id']).set(data);
   
   }
   logout(){
     var userDetails = JSON.parse(localStorage.getItem('user'));
-    this.firestore.collection('users').doc(userDetails.email).update({
+    console.log(userDetails);
+    this.firestore.collection('users').doc(userDetails.id).update({
       isLogin:false,
       logoutAt: new Date()
     }).then(()=>{

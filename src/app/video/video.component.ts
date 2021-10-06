@@ -24,19 +24,26 @@ export class VideoComponent implements OnInit ,AfterViewInit {
   name;
   VideoLink;
   showChat:boolean = false;
-  showCountDown:boolean;
+  showCountDown:boolean = true;
   Days;Hours;Minutes;Seconds;
   showPhoto:boolean = false;
   chats;
-  showName:boolean = false;
+  
+  showName:boolean = true;
   private likesCollection: AngularFirestoreCollection<Likes>;
   private thumbsCollection: AngularFirestoreCollection<Likes>;
   showEmojiPicker:boolean = false;
-  constructor(private sanitize:DomSanitizer, private firestore:AngularFirestore,private ss:SignupService, private router:Router,private elementRef: ElementRef) { }
+  constructor(private sanitize:DomSanitizer, private firestore:AngularFirestore,private ss:SignupService, private router:Router,private elementRef: ElementRef) { 
+    this.firestore.collection("showCountDown").doc("showCountDown").valueChanges().subscribe((res)=>{
+      console.log(res['value']);
+      this.showCountDown = res['value'];
+    })
+  }
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument
         .body.style.backgroundColor = '#000000';
 }
+
 ngOnDestroy(): void {
   //Called once, before the instance is destroyed.
   //Add 'implements OnDestroy' to the class.
@@ -56,6 +63,7 @@ sendChat(){
   this.msg = '';
 }
   ngOnInit(): void {
+    this.timer();
     this.firestore.collection("link").doc("link").valueChanges().subscribe((res)=>{
       this.VideoLink = this.sanitize.bypassSecurityTrustResourceUrl(res['link']);
  
@@ -66,11 +74,11 @@ sendChat(){
     }else{
       this.router.navigate(['/login']);
     }
-    this.name = this.user.name;
-    this.firestore.collection("chats",ref=>ref.orderBy('date').limitToLast(20)).valueChanges().subscribe((res)=>{
-      this.chats = res;
+    // this.name = this.user.name;
+    // this.firestore.collection("chats",ref=>ref.orderBy('date').limitToLast(20)).valueChanges().subscribe((res)=>{
+    //   this.chats = res;
       
-    })
+    // })
    
 
     this.clap = new Audio();
@@ -95,6 +103,47 @@ sendChat(){
   //      this.multiple1();
     
   // })
+  }
+  timer(){
+    var countDownDate = new Date("Oct 11, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(()=> {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  if(hours < 10){
+    this.Hours = "0"+ hours + (days*24);
+  }else{
+    this.Hours = hours + (days*24);
+  }
+  if(minutes < 10){
+    this.Minutes = "0"+ minutes;
+  }else{
+    this.Minutes = minutes;
+  }
+  if(seconds < 10){
+    this.Seconds = "0"+ seconds;
+  }else{
+    this.Seconds = seconds;
+  }
+  
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    
+  }
+}, 1000);
   }
   addEmoji(event){
       if(this.msg)

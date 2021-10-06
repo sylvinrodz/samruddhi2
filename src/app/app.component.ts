@@ -28,7 +28,7 @@ export class AppComponent {
   constructor(private ss:SignupService,private router:Router, @Inject(DOCUMENT) private document: any,private firestore:AngularFirestore){
     this.user =  JSON.parse(localStorage.getItem('user'));
     if(this.user != null){
-      this.firestore.collection('users').doc(this.user.email).valueChanges().subscribe((res)=>{
+      this.firestore.collection('users').doc(this.user.id).valueChanges().subscribe((res)=>{
         if(res){
           if(res['isLogin'] === false){
             localStorage.clear();

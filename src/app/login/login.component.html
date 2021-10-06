@@ -1,39 +1,100 @@
+<div>
+  <img src="assets/images/login.jpg" alt="loginPage" class="loginPage">
+  <span class="msg" *ngIf="Errormsg">{{ErrorText}}</span>
 
- 
-<div >
-<img src="assets/images/login.jpg" alt="loginPage" class="loginPage">
-<span class="msg" *ngIf="Errormsg">{{ErrorText}}</span>
-
-<div class="formArea">
+  <div class="formArea">
     <form class="form" (ngSubmit)="onSubmit()" #f="ngForm" autocomplete="off">
-      
-      <div style="height: 1.4vw;width:100%;background:transparent;">
-      </div>
-      <div class="formDiv" >
-        
-          <input type="text" class="input" id="name" name="name" [(ngModel)]="model.name" required
-            #name="ngModel" autocomplete="off" placeholder="Name"/>
-        </div>
-        <div style="height: 3.3vw;width:100%;background:transparent;">
-        </div>
-        <div class="formDiv" >
-        
-          <input type="email" class="input" id="email" name="email" [(ngModel)]="model.email" required
-            #email="ngModel" autocomplete="off" placeholder="Email ID"/>
-        </div>
-        
-      <div style="height: 3.3vw;width:100%;background:transparent;">
-            </div>
-  
-    <div class="text-center">
-      <img class="formButton" src="assets/images/Enter.png" (click)="onSubmit()" *ngIf="showLoginButton">
-     
-    </div>
-      
-    <div style="height: 1vw;width:100%;background:transparent;">
-    </div>
 
+      <div class="gap">
+      </div>
+      <div class="gap">
+      </div>
+      <div class="formDiv">
         
-      </form>
-</div>
+          <div style="width: 22%;font-size: 1.5vw;font-weight: 450;display: inline-block;">
+            Full Name*
+          </div>
+          <div style="width: 18%;display: inline-block;">
+            <select id="title" name="title" [(ngModel)]="model.title" required #title="ngModel" class="select">
+              <option value="Mr">Mr.</option>
+              <option value="Mrs">Mrs.</option>
+              <option value="Ms">Ms.</option>
+              <option value="Miss">Miss</option>
+            </select>
+          </div>
+          <div style="width: 60%;display: inline-block;">
+            <input type="text" class="input" id="name" name="name" [(ngModel)]="model.name" required #name="ngModel"
+              autocomplete="off" />
+          </div>
+        
+      </div>
+      <div class="gap">
+      </div>
+      <div class="formDiv">
+       
+          <div style="width: 22%;font-size: 1.5vw;font-weight: 450;display: inline-block;">
+            Contact No*
+          </div>
+    
+          <div style="width: 78%;display: inline-block;">
+            <input type="number" class="input" id="contactNo" name="contactNo" [(ngModel)]="model.contactNo" required #contactNo="ngModel"
+              autocomplete="off" />
+          </div>
+      
+      </div>
+      <div class="gap">
+      </div>
+      <div class="formDiv">
+       
+          <div style="width: 22%;font-size: 1.5vw;font-weight: 450;display: inline-block;">
+            City*
+          </div>
+    
+          <div style="width: 78%;display: inline-block;">
+            <input type="text" class="input" id="city" name="city" [(ngModel)]="model.city" required #city="ngModel"
+              autocomplete="off" />
+          </div>
+        
+      </div>
+      <div class="gap">
+      </div>
+      <div class="formDiv">
+    
+          <div style="width: 22%;font-size: 1.5vw;font-weight: 450;display: inline-block;">
+            State*
+          </div>
+    
+          <div style="width: 78%;display: inline-block;">
+            <input type="text" class="input" id="state" name="state" [(ngModel)]="model.state" required #state="ngModel"
+              autocomplete="off" />
+          </div>
+        
+      </div>
+      <div class="gap">
+      </div>
+      <div class="formDiv">
+    
+          <div style="width: 22%;font-size: 1.5vw;font-weight: 450;display: inline-block;">
+            Email
+          </div>
+    
+          <div style="width: 78%;display: inline-block;">
+            <input type="email" class="input" id="email" name="email" [(ngModel)]="model.email" required #email="ngModel"
+              autocomplete="off" />
+          </div>
+        
+      </div>
+      <div class="gap">
+      </div>
+      <div class="text-center">
+        <img class="formButton" src="assets/images/submit.png" (click)="onSubmit()" *ngIf="showLoginButton">
+
+      </div>
+
+      <div style="height: 1vw;width:100%;background:transparent;">
+      </div>
+
+
+    </form>
+  </div>
 </div>
