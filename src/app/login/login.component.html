@@ -65,8 +65,12 @@
           </div>
     
           <div style="width: 78%;display: inline-block;">
-            <input type="text" class="input" id="state" name="state" [(ngModel)]="model.state" required #state="ngModel"
-              autocomplete="off" />
+            <!-- <input type="text" class="input" id="state" name="state" [(ngModel)]="model.state" required #state="ngModel"
+              autocomplete="off" /> -->
+              <select id="state" name="state" [(ngModel)]="model.state" required #state="ngModel" class="input">
+                <option value="{{state}}" *ngFor="let state of states">{{state}}</option>
+                
+              </select>
           </div>
         
       </div>

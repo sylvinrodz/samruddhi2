@@ -28,6 +28,45 @@ export class LoginComponent implements OnInit {
   @ViewChild('f') form: any;
   formSubmit: boolean = false;
   showLoginButton: boolean = true;
+  states = [ 
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jammu and Kashmir",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttarakhand",
+  "Uttar Pradesh",
+  "West Bengal",
+  "Andaman and Nicobar Islands",
+  "Chandigarh",
+  "Dadra and Nagar Haveli",
+  "Daman and Diu",
+  "Delhi",
+  "Lakshadweep",
+  "Puducherry"
+];
+
   constructor(
     private ss: SignupService,
     private router: Router,
@@ -35,6 +74,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.states.length);
     this.user = JSON.parse(localStorage.getItem('user'));
     if (this.user != null) {
       this.router.navigate(['/video']);

@@ -1,11 +1,10 @@
 .videoPage{
     position: absolute;
    
-    /* object-fit: cover; */
+    object-fit: cover;
     width: 100%;
     max-width: 100vw;
-    height: 100%;
-   /* background-size: cover; */
+   background-size: cover;
    top: 0%;
    left: 50%;
    transform: translate(-50%,0%);
@@ -27,11 +26,11 @@
 
 .comment{
     position: absolute;
-    top: 89%;
-    left: 35%;
-    transform: translate(-35%);
+    top: 88%;
+    left: 25%;
+    transform: translate(-25%);
     /* margin-top: 45%; */
-    width: 10vw;
+    width: 22.5vw;
     height: auto;
     cursor: pointer;
     background-color: transparent;
@@ -39,7 +38,7 @@
 }
 .clap{
     position: absolute;
-    top: 89%;
+    top: 88%;
     left: 50%;
     transform: translate(-50%);
     /* margin-top: 45%; */
@@ -52,7 +51,7 @@
 
 .hoot{
     position: absolute;
-    top: 89%;
+    top: 88%;
     left: 65%;
     transform: translate(-65%);
     /* margin-top: 45%; */
@@ -199,7 +198,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: #3F0D54;
+    background: #F39202;
     padding: 0.5%;
     color: #ffffff;
     text-align: center;
@@ -388,7 +387,7 @@ div.thumb i {
 	border-radius: 5px 5px 0px 0px;
     border: none;
     cursor: pointer;
-    background-color: #731fca;color: #fff;
+    background-color: #F39202;color: #fff;
 }
 .chat-head h2{
 	color: white;
@@ -573,4 +572,41 @@ emoji-mart{
         right: -29px;
         top: 5.5px;
     } */
+    .comment{
+        position: absolute;
+        top: 80%;
+        left: 25%;
+        transform: translate(-25%);
+        /* margin-top: 45%; */
+        width: 22vw;
+        height: auto;
+        cursor: pointer;
+        background-color: transparent;
+        z-index: 1;
+    }
+    .clap{
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%);
+        /* margin-top: 45%; */
+        width: 10vw;
+        height: auto;
+        cursor: pointer;
+        background-color: transparent;
+        z-index: 20;
+    }
+    
+    .hoot{
+        position: absolute;
+        top: 80%;
+        left: 65%;
+        transform: translate(-65%);
+        /* margin-top: 45%; */
+        width: 10vw;
+        height: auto;
+        cursor: pointer;
+        background-color: transparent;
+        z-index: 20;
+    }
 }
