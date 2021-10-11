@@ -73,11 +73,11 @@
         <span style="float: right;font-size: 1vw;cursor: pointer;" (click)="showModal(false)" data-bs-toggle="tooltip" data-bs-placement="right" title="Close">x</span>
       </div>
       <div class="body">
-        <span >Say something*:</span> 
+        <span style="font-size: 2vw">Say Something*:</span> 
         <textarea name="question" [(ngModel)]="question" rows="3" style="width: 100%;resize: none;"></textarea>
       </div>
       <div class="modalFooter">
-        <button type="button" class="btn btn-block" (click)="askQuestion(question)" [disabled] = "!question" ><img src="assets/images/submit.png" alt="submit" class="submit" ></button>
+        <button type="button" class="btn btn-block" (click)="askQuestion(question)" [disabled] = "!question" ><img src="assets/images/SubmitComment.png" alt="submit" class="submit" ></button>
         
       </div>
     </div>

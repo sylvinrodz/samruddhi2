@@ -132,12 +132,22 @@ export class LoginComponent implements OnInit {
       }
      
     }else{
-      this.Errormsg = true;
-      this.ErrorText = 'Enter Valid Contact Number*';
-      setTimeout(() => {
-        this.Errormsg = false;
-      }, 1500);
-      this.showLoginButton = true;
+      if (email) {
+        var pattern = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$');
+        var result = pattern.test(email);
+        if (result) {
+          this.login(this.form.value);
+        } else {
+          this.Errormsg = true;
+          this.ErrorText = 'Enter Valid Email ID*';
+          setTimeout(() => {
+            this.Errormsg = false;
+          }, 1500);
+          this.showLoginButton = true;
+        }
+      } else {
+        this.login(this.form.value);
+      }
     }
     } else {
       this.Errormsg = true;
